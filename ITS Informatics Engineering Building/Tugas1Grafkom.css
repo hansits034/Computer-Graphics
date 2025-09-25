@@ -1,0 +1,159 @@
+body { 
+  font-family: Inter, Arial, sans-serif; 
+  margin: 12px; 
+  background: #111; 
+  color: #eee; 
+  display: flex; 
+  justify-content: center;  
+  align-items: flex-start; 
+}
+
+.main-wrapper {
+  display: flex;
+  gap: 0;          
+  width: 70%;        
+}
+
+#left { 
+  flex: 0 0 70%;
+  padding-right: 20px;      
+}
+
+:root {
+  --controls-bg: #0f1720;
+  --scrollbar-track-bg: #2d3748;
+  --scrollbar-thumb-bg: #4a5568;
+  --border-radius: 8px;
+}
+
+#controls {
+  flex: 0 0 25%;
+  max-height: 600px;
+  padding: 12px;
+  box-sizing: border-box;
+  overflow-y: auto;       
+  background: var(--controls-bg);
+  border-radius: var(--border-radius);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb-bg) var(--scrollbar-track-bg);
+}
+
+#controls::-webkit-scrollbar {
+  width: 8px;
+}
+
+#controls::-webkit-scrollbar-track {
+  background: var(--scrollbar-track-bg);
+  border-radius: var(--border-radius);
+}
+
+#controls::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb-bg);
+  border-radius: var(--border-radius);
+}
+
+#controls::-webkit-scrollbar {
+  width: 8px;
+}
+
+canvas { 
+  background: #87CEEB; 
+  border-radius: 6px; 
+  display: block; 
+}
+
+#left canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.row { 
+  margin: 8px 0; 
+}
+
+label { 
+  display: block; 
+  font-size: 13px; 
+  color: #cbd5e1; 
+  margin-bottom: 6px; 
+}
+
+input[type=range] { 
+  width: 100%; 
+}
+
+button { 
+  margin-right: 8px; 
+  padding: 8px 12px; 
+  border-radius: 6px; 
+  background: #0ea5a4; 
+  color: #042; 
+  border: none; 
+  cursor: pointer;
+}
+
+.muted { 
+  color: #9ca3af; 
+  font-size: 13px; 
+}
+
+img#photoPreview { 
+  max-width: 100%; 
+  display: block; 
+  margin-top: 8px; 
+  border-radius: 6px; 
+}
+
+h2 { 
+  margin: 6px 0 12px 0; 
+  color: #fff; 
+  font-size: 18px; 
+}
+
+h3 {
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 8px;
+  margin-top: 0;
+}
+
+.control-section {
+  border-top: 1px solid #334155;
+  padding-top: 12px;
+  margin-top: 12px;
+}
+
+.hint { 
+  font-size: 12px; 
+  color: #94a3b8; 
+}
+
+.lighting-section { 
+  border-top: 1px solid #334155; 
+  padding-top: 12px; 
+  margin-top: 12px; 
+}
+
+.subcontrols { 
+  margin-top: 10px; 
+  background: #071221; 
+  padding: 8px; 
+  border-radius: 6px; 
+}
+
+.subcontrols button { 
+  background: #2563eb; 
+  color: #fff; 
+  margin: 4px 4px 0 0; 
+}
+
+select {
+  width: 100%;
+  padding: 6px;
+  background-color: #1e293b;
+  color: #cbd5e1;
+  border: 1px solid #334155;
+  border-radius: 4px;
+}

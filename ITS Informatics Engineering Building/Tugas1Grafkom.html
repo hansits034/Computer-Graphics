@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Grafika: Gedung Teknik Informatika ITS</title>
+  <link rel="stylesheet" href="tugas1grafkom.css">
+</head>
+<body>
+  <div class="main-wrapper">
+    <div id="left">
+      <canvas id="gl-canvas" width="800" height="600"></canvas>
+
+      <div style="display:flex; gap:8px; margin-top:8px; align-items:center;">
+        <button id="btnReset">Reset</button>
+        <button id="btnToggleSpin">Toggle Spin</button>
+        <div class="muted">Controls: Arrow keys = translate, +/- = scale, R = reset, (Refresh) to random tree, car, and motorcycle.</div>
+      </div>
+
+      <div style="margin-top:12px; background:#081126; padding:10px; border-radius:8px;">
+        <div class="hint">Foto Gedung: Dari Jauh</div>
+        <img src="foto1.jpg" id="photoPreview" alt="Your object photo will appear here" style="width: 100%;" />
+        <br><br>
+        <div class="hint">Foto Gedung: Dari Dekat</div>
+        <img src="foto2.jpg" id="photoPreview" alt="Your object photo will appear here" style="width: 100%;" />
+      </div>
+    </div>
+
+    <div id="controls">
+      <h2>Gedung Teknik Informatika ITS</h2>
+
+      <div class="control-section">
+        <h3>Object Transform</h3>
+        <div class="row">
+          <label>Rotate X (<span id="rx">0</span>°)</label>
+          <input id="rxRange" type="range" min="-180" max="180" value="0" />
+        </div>
+        <div class="row">
+          <label>Rotate Y (<span id="ry">-132</span>°)</label>
+          <input id="ryRange" type="range" min="-180" max="180" value="-132" />
+        </div>
+        <div class="row">
+          <label>Rotate Z (<span id="rz">0</span>°)</label>
+          <input id="rzRange" type="range" min="-180" max="180" value="0" />
+        </div>
+        <div class="row">
+          <label>Translate X (<span id="tx">0.00</span>)</label>
+          <input id="txRange" type="range" min="-1.5" max="1.5" step="0.01" value="0" />
+        </div>
+        <div class="row">
+          <label>Translate Y (<span id="ty">0.00</span>)</label>
+          <input id="tyRange" type="range" min="-1.5" max="1.5" step="0.01" value="0" />
+        </div>
+        <div class="row">
+          <label>Translate Z (<span id="tz">0.00</span>)</label>
+          <input id="tzRange" type="range" min="-3.0" max="3.0" step="0.01" value="0" />
+        </div>
+        <div class="row">
+          <label>Scale (<span id="sVal">0.32</span>)</label>
+          <input id="sRange" type="range" min="0.05" max="1" step="0.01" value="0.32" />
+        </div>
+      </div>
+
+      <div class="control-section">
+        <h3>Camera Controls (Eye Position)</h3>
+        <div class="row">
+          <label>Eye X (<span id="eyeXVal">1.0</span>)</label>
+          <input id="eyeXRange" type="range" min="-10" max="10" step="0.1" value="1.0" />
+        </div>
+        <div class="row">
+          <label>Eye Y (<span id="eyeYVal">2.5</span>)</label>
+          <input id="eyeYRange" type="range" min="-10" max="10" step="0.1" value="2.5" />
+        </div>
+        <div class="row">
+          <label>Eye Z (<span id="eyeZVal">3.8</span>)</label>
+          <input id="eyeZRange" type="range" min="-10" max="20" step="0.1" value="3.8" />
+        </div>
+      </div>
+
+      <div class="control-section">
+          <h3>Projection Controls</h3>
+          <div class="row">
+              <label>Projection Type</label>
+              <select id="projectionType">
+                  <option value="perspective" selected>Perspective</option>
+                  <option value="ortho">Orthographic</option>
+              </select>
+          </div>
+          <div id="perspective-controls">
+              <div class="row">
+                  <label>Field of View (<span id="fovyVal">63</span>°)</label>
+                  <input id="fovyRange" type="range" min="10" max="120" value="63" />
+              </div>
+          </div>
+          <div id="ortho-controls" style="display:none;">
+              <div class="row">
+                  <label>Left/Right (<span id="orthoLRVal">5</span>)</label>
+                  <input id="orthoLRRange" type="range" min="1" max="20" value="5" />
+              </div>
+              <div class="row">
+                  <label>Bottom/Top (<span id="orthoBTVal">5</span>)</label>
+                  <input id="orthoBTRange" type="range" min="1" max="20" value="5" />
+              </div>
+          </div>
+          <div class="row">
+              <label>Near Clip Plane (<span id="nearVal">0.1</span>)</label>
+              <input id="nearRange" type="range" min="0.1" max="10" step="0.1" value="0.1" />
+          </div>
+          <div class="row">
+              <label>Far Clip Plane (<span id="farVal">100</span>)</label>
+              <input id="farRange" type="range" min="10" max="200" value="100" />
+          </div>
+      </div>
+
+      <div class="lighting-section">
+        <h3 style="color:#fff; font-size:16px; margin-bottom:8px;">Sun Position</h3>
+        <div class="row">
+          <label>Sun Azimuth (<span id="sunAz">135</span>°)</label>
+          <input id="sunAzRange" type="range" min="0" max="360" value="135" />
+        </div>
+        <div class="row">
+          <label>Sun Elevation (<span id="sunEl">25</span>°)</label>
+          <input id="sunElRange" type="range" min="5" max="90" value="25" />
+        </div>
+        <div class="row">
+          <label>Shadow Intensity (<span id="shadowInt">0</span>)</label>
+          <input id="shadowIntRange" type="range" min="0.0" max="0.8" step="0.1" value="0" />
+        </div>
+      </div>
+
+      <div style="margin-top:10px;">
+        <div class="muted">Keyboard: ←→↑↓ move, + / - scale, R reset</div>
+        <div style="margin-top:8px;" class="muted">Realistic Phong lighting with sun positioning and shadows</div>
+      </div>
+    </div>
+  </div>
+
+  <script id="vertex-shader" type="x-shader/x-vertex">
+    #version 300 es
+    in vec4 aPosition;
+    in vec4 aColor;
+    in vec3 aNormal;
+
+    out vec4 vColor;
+    out vec3 vNormal;
+    out vec3 vPosition;
+
+    // New uniforms for model-view and projection matrices
+    uniform mat4 modelViewMatrix;
+    uniform mat4 projectionMatrix;
+
+    void main() {
+      // Transform vertex position to world space for lighting calculations
+      vPosition = (modelViewMatrix * aPosition).xyz;
+
+      // Transform normal. Use top-left 3x3 of modelViewMatrix.
+      // This is accurate for uniform scaling and rotation.
+      vNormal = normalize(mat3(modelViewMatrix) * aNormal);
+
+      // Final clip-space position
+      gl_Position = projectionMatrix * modelViewMatrix * aPosition;
+      
+      vColor = aColor;
+    }
+  </script>
+
+  <script id="fragment-shader" type="x-shader/x-fragment">
+    #version 300 es
+    precision mediump float;
+    
+    in vec4 vColor;
+    in vec3 vNormal;
+    in vec3 vPosition;
+    
+    out vec4 fColor;
+    
+    uniform vec3 uLightDirection;
+    uniform vec3 uLightColor;
+    uniform vec3 uAmbientColor;
+    uniform float uShadowFactor;
+    
+    void main() {
+      vec3 normal = normalize(vNormal);
+      vec3 lightDir = normalize(-uLightDirection);
+      vec3 ambient = uAmbientColor * vColor.rgb;
+      float diff = max(dot(normal, lightDir), 0.0);
+      vec3 diffuse = diff * uLightColor * vColor.rgb;
+      vec3 viewDir = normalize(-vPosition);
+      vec3 reflectDir = reflect(-lightDir, normal);
+      float spec = pow(max(dot(viewDir, reflectDir), 0.0), 32.0);
+      vec3 specular = spec * uLightColor * 0.3;
+      float shadowMask = 1.0 - uShadowFactor * (1.0 - diff);
+      vec3 finalColor = (ambient + diffuse + specular) * shadowMask;
+      fColor = vec4(finalColor, vColor.a);
+    }
+  </script>
+
+  <script src="initShaders.js"></script>
+  <script src="MVnew.js"></script>
+  <script src="tugas1grafkom.js"></script>
+
+</body>
+</html>
