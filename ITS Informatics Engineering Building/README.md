@@ -28,23 +28,22 @@ The main concepts applied include:
 
 ## 📂 Project Structure
 <pre>
-/tugas-1/
-│── index.html # Entry point aplikasi
-│── main.js # Script utama (WebGL setup, buffer, rendering, interaksi)
-│── shaders/
-│ ├── vertex.glsl # Vertex shader
-│ └── fragment.glsl # Fragment shader
-│── assets/
-│ └── (jika ada gambar/tekstur tambahan)
-│── README.md
+/ITS Informatics Engineering Building/
+│── Tugas1Grafkom.css 
+│── Tugas1Grafkom.html 
+│── Tugas1Grafkom.js 
+│── foto1.jpg
+│── foto2.jpg
+│── initShaders.js
+README.md
 </pre>
 
 
 ---
 
 ## 🎮 How to Run
-1. Clone this repository or open the `assignment-1` folder.  
-2. Open `index.html` in a WebGL-supported browser (Chrome, Firefox, Edge).  
+1. Clone this repository or open the `ITS Informatics Engineering Building` folder.  
+2. Open `Tugas1Grafkom.html` in a WebGL-supported browser (Chrome, Firefox, Edge).  
 3. Use the available controls (keyboard/mouse) to interact with the rendered object.  
 
 ---
@@ -52,7 +51,8 @@ The main concepts applied include:
 ## 🖼️ Output Preview
 Example of the rendered result for this assignment:  
 
-![Rendered Output](paste-your-image-link-here)  
+<img width="2556" height="1252" alt="Screenshot 2025-09-25 130548" src="https://github.com/user-attachments/assets/f550c157-7147-4ce7-9c39-539b17447d46" />
+
 
 ---
 
@@ -62,5 +62,5 @@ Example of the rendered result for this assignment:
 
 ---
 
-✨ *This assignment helps to build a strong foundation in interactive computer graphics using WebGL.*  
+### ✨What I Learned: This assignment helps to build a strong foundation in interactive computer graphics using WebGL.  
 
