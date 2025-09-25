@@ -52,6 +52,10 @@ README.md
 Example of the rendered result for this assignment:  
 
 <img width="2556" height="1252" alt="Screenshot 2025-09-25 130548" src="https://github.com/user-attachments/assets/f550c157-7147-4ce7-9c39-539b17447d46" />
+<br>
+Replicated photo:
+<img width="1226" height="958" alt="image" src="https://github.com/user-attachments/assets/edcce0a3-e6d3-4c31-8d80-e70a34b58253" />
+
 
 
 ---
