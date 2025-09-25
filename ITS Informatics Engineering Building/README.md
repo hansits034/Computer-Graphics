@@ -1,4 +1,4 @@
-# 🖼️ Assignment 1 - Basic WebGL Implementation  
+# 🖼️ ITS Informatics Engineering Building - Basic WebGL Implementation  
 
 ## 📖 Description  
 This assignment is an introductory implementation using **WebGL** to model a **real-world object** and render it in a computer graphics system.  
