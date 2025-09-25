@@ -27,6 +27,7 @@ The main concepts applied include:
 ---
 
 ## 📂 Project Structure
+<pre>
 /tugas-1/
 │── index.html # Entry point aplikasi
 │── main.js # Script utama (WebGL setup, buffer, rendering, interaksi)
@@ -36,7 +37,7 @@ The main concepts applied include:
 │── assets/
 │ └── (jika ada gambar/tekstur tambahan)
 │── README.md
-
+</pre>
 
 
 ---
